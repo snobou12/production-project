@@ -6,6 +6,7 @@ const MainPage:FC =()=> {
   return (
     <div>
       {t("main_page_title")}
+      gg
       </div>
   )
 }
