@@ -1,0 +1,5 @@
+//Чтобы работал babel + i18next
+{
+	"presets": ["@babel/preset-env"],
+	"plugins": ["i18next-extract"]
+}

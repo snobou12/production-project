@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		// Куда собирается сборка, но мы собираем webpack'ом
+		"outDir": "./dist/",
+		"sourceMap": true,
+		// подсветка типа any, если конечно не явно указано
+		"noImplicitAny": true,
+		"module": "ESNext",
+		// версия ecmascript в который будет компилироваться
+		"target": "es5",
+		// можно было писать jsx,tsx и не нужно было импортировать react
+		"jsx": "react-jsx",
+		// компилятор обрабатывает не только ts но и js
+		"allowJs": true,
+		// Какие импорты будут, node или classic
+		"moduleResolution": "node",
+		// позволяет работать с  пакетами, которые используют module.exports and require(commonjs)
+		"esModuleInterop": true,
+		// Если библиотека не имеет default export, то вместо import * as React from 'react' можно писать import React from "react"
+		"allowSyntheticDefaultImports": true,
+		//alias чтобы можно было использовать абсолютные пути(так же нужно в webpack написать пару строчек )
+		"baseUrl": ".",
+		"paths": {
+			"*": ["./src/*"]
+		}
+	},
+	//чтобы можно было юзать import export
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	}
+}
