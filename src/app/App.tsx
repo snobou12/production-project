@@ -1,4 +1,4 @@
-import { FC, Suspense } from 'react';
+import { FC, Suspense, useEffect } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/SideBar';
@@ -8,6 +8,7 @@ import './styles/index.scss';
 
 const App: FC = () => {
     const { theme } = useTheme();
+
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
@@ -20,5 +21,4 @@ const App: FC = () => {
         </div>
     );
 };
-
 export default App;

@@ -37,8 +37,6 @@ export default {
     // The directory where Jest should output its coverage files
     // coverageDirectory: undefined,
 
-    // игнор node modules
-
     // Indicates which provider should be used to instrument code for coverage
     // coverageProvider: "babel",
 

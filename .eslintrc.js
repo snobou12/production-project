@@ -51,12 +51,15 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         // нижние подчеркивания __IS_DEV__
         'no-underscore-dangle': 'off',
-        // Чтобы можно было писать куча кода в строку(только для комментариев желательно сделать в будущем)
-        'max-len': ['error', { code: 400 }],
+        // длина строки кода  <= 100 и не учитывать это для комментариев
+        'max-len': ['error', { code: 200, ignoreComments: true }],
+
         // чтобы не было ошибки на счет типа button
         'react/button-has-type': [0],
         // ругаться отсутствия перевода только в jsx
         // 'i18next/no-literal-string': ['error', { markupOnly: true }],
+        // Чтобы можно было консолить что угодно
+        'no-console': 'off',
     },
     // чтобы не ругался на обьявление isDev из env
     globals: {

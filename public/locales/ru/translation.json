@@ -1,3 +1,6 @@
 {
-	"current_language": "Русский"
+  "current_language": "Русский",
+  "PageNotFound": "Страница не найдена",
+  "An unexpected error occurred": "Произошла непредвиденная ошибка",
+  "Reload page": "Перезагрузить страницу"
 }

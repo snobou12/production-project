@@ -1,3 +1,6 @@
 {
-	"current_language": "English"
+  "current_language": "English",
+  "PageNotFound": "Page Not Found",
+  "An unexpected error occurred": "An unexpected error occurred",
+  "Reload page": "Reload page"
 }
