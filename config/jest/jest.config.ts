@@ -1,3 +1,5 @@
+import path from 'path';
+
 export default {
     clearMocks: true,
     testEnvironment: 'jsdom',
@@ -27,6 +29,20 @@ export default {
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
+    // для абсолютных путей
+    modulePaths: [
+        '<rootDir>src',
+    ],
+    // для тестирование react компонентов
+    setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+    // для css и scss обработки jest react + mock для svg import
+    moduleNameMapper: {
+        '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
+    },
+    // transform: {
+    //     '^.+\\.(js|jsx)$': 'babel-jest',
+    // },
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
@@ -161,13 +177,8 @@ export default {
     // testRunner: "jest-circus/runner",
 
     // A map from regular expressions to paths to transformers
-    // transform: undefined,
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-    // transformIgnorePatterns: [
-    //   "\\\\node_modules\\\\",
-    //   "\\.pnp\\.[^\\\\]+$"
-    // ],
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,

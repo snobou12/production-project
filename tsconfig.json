@@ -24,10 +24,13 @@
 			"*": ["./src/*"]
 		}
 	},
+
 	//чтобы можно было юзать import export
 	"ts-node": {
 		"compilerOptions": {
 			"module": "CommonJS"
 		}
 	}
+	// чтобы подружить реакт тесты с ts, но ts ее сам подхватыет, можно не писать
+	// "include": ["src/**/*", "./config/jest/setupTest.ts"]
 }

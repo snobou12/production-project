@@ -1,6 +1,7 @@
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
@@ -13,6 +14,8 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         // webpack.DefinePlugin - можем env передавать на клиент(в приложение)
         // webpack.HotModuleReplacementPlugin - чтобы не обновлялась страница при не серьезных изменениях
         // ReactRefreshWebpackPlugin дополнение к выше плагину для React
+        // BundleAnalyzerPlugin анализируем бандл(очень удобно)
+
         new HTMLWebpackPlugin({
             // создаем шаблон
             template: paths.html,
@@ -27,5 +30,8 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         }),
         new ReactRefreshWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }),
     ];
 }
