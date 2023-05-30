@@ -1,7 +1,0 @@
-1) Инициализация приложения, yarn init -y
-2) Установка webpack, плагинов, лоудеров, ts в devDependencies - нужен только в режиме разработки, в продакшене не нужен
-
-Создаем файл webpack.config.ts, добавляем конфигурацию webpack
-Создаем public/index.html с разметкой и  <div id='root'> </div> в <body></body>
-Не забываем про декомпозицию конфига webpack
-Создаем tsconfig.json
