@@ -10,6 +10,6 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
         mainFiles: ['index'],
         // без @, можно просто kek/lol/arbidol
         alias: {},
-        
+
     };
 }

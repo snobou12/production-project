@@ -24,7 +24,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
     // css,scss,scss modules
-    const styleLoader = buildCssLoader(isDev)
+    const styleLoader = buildCssLoader(isDev);
 
     // для использования других фич, babel - транспилятор для старых браузеров, из ecma2015 в <,
     // ~~~кстати если бы не юзали typescirpt, то он бы нужен был в любой случае + babel-react presets нужен был бы~~~
