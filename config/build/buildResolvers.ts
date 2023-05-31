@@ -7,8 +7,9 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
         // alias чтобы можно было использовать абсолютные пути(так же нужно в ts config написать пару строчек )
         preferAbsolute: true,
         modules: [options.paths.src, 'node_modules'],
-        // без @, можно просто kek/lol/arbidol
         mainFiles: ['index'],
+        // без @, можно просто kek/lol/arbidol
         alias: {},
+        
     };
 }

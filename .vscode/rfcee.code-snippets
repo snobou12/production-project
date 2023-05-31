@@ -1,0 +1,21 @@
+{
+	"ReactComponent": {
+		"prefix": "rfcee",
+		"body": [
+			"import { FC } from \"react\";",
+			"import { classNames } from \"shared/lib/classNames/classNames\";",
+			"import classes from \"./${1:name}.module.scss\";",
+			"interface ${1:name}Props {",
+			"\tclassName?: string;",
+			"}",
+			"const ${1:name}: FC<${1:name}Props> = ({ className }) => {",
+			"\treturn (",
+			"\t\t<div className={classNames(classes.${2:name}, {}, [className])}></div>",
+			"\t);",
+			"};",
+			"",
+			"export default ${1:name};",
+			""
+		]
+	}
+}
