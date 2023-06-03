@@ -7,7 +7,6 @@ const AboutPage: FC = () => {
     return (
         <div>
             {t('about-page-title')}
-            <span>kek</span>
         </div>
     );
 };
