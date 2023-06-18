@@ -5,5 +5,8 @@
   "Reload page": "Перезагрузить страницу",
   "short_lang": "Ру",
   "main_page_link": "Главная",
-  "about_page_link": "О нас"
+  "about_page_link": "О нас",
+  "Login": "Войти",
+  "increment_btn": "Добавить +1",
+  "decrement_btn": "Отнять -1"
 }

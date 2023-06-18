@@ -5,5 +5,8 @@
   "Reload page": "Reload page",
   "short_lang": "En",
   "main_page_link": "Home",
-  "about_page_link": "About"
+  "about_page_link": "About",
+  "Login": "Sign In",
+  "increment_btn": "Increment",
+  "decrement_btn": "Decrement"
 }

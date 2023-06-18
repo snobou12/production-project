@@ -1,0 +1,12 @@
+{
+	"TestSnippet": {
+		"prefix": "tst",
+		"body": [
+			"describe('${1:name}', () => {",
+			"\ttest('', () => {",
+			"\t\texpect().toEqual();",
+			"\t});",
+			"});"
+		]
+	}
+}

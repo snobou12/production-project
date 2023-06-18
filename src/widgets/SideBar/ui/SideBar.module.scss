@@ -68,5 +68,8 @@
     .link{
         opacity: 0;
         width: 0;
+
+        // change this
+        white-space: nowrap;
     }
 }

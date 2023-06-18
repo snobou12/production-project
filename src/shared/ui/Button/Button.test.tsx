@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 
-describe('Button', () => {
+describe('Button.test', () => {
     test('have button', () => {
         render(<Button>test</Button>);
         expect(screen.getByText('test')).toBeInTheDocument();

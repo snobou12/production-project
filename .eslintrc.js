@@ -15,7 +15,8 @@ module.exports = {
         sourceType: 'module',
     },
     // 'i18next' плагин, чтобы показывал все не переведенные слова (t(""))
-    plugins: ['react', '@typescript-eslint'],
+    // react-hooks, в основе для useMemo useCallback
+    plugins: ['react', '@typescript-eslint', 'react-hooks'],
     rules: {
         'no-tabs': ['error', {
             allowIndentationTabs: true,
@@ -63,6 +64,15 @@ module.exports = {
         // 'i18next/no-literal-string': ['error', { markupOnly: true }],
         // Чтобы можно было консолить что угодно
         'no-console': 'off',
+        // пока отключим правила семантики(типо onClick на div)
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        // Checks rules of Hooks
+        'react-hooks/rules-of-hooks': 'error',
+        // Checks effect dependencies
+        'react-hooks/exhaustive-deps': 'error',
+        // Аргументы функции можно менять
+        'no-param-reassign': 'off',
     },
     // чтобы не ругался на обьявление isDev из env
     globals: {

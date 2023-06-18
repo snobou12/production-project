@@ -1,6 +1,10 @@
 import path from 'path';
 
 export default {
+    // Чтобы jest знал про глобал переменные
+    globals: {
+        __IS_DEV__: true,
+    },
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
@@ -39,6 +43,10 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
+        // Бага, что jest ищет entities сначала в node_modules и выдает ошибку
+        // $1 - это значение первой "группы захвата", что мы указали в регулярке. А если быть точнее, то в $1 попадает всё, что попало в "(.*)". В нашем случае это Counter. Чем-то эта штука напоминает аргументы функции, но внутри регулярок.
+        // И по итогу эта конструкция все модули, что начинаются с entities/SOMTHING_PATH, заменяет на ./src/entities/SOMTHING_PATH
+        'entities/(.*)': '<rootDir>src/entities/$1',
     },
     // transform: {
     //     '^.+\\.(js|jsx)$': 'babel-jest',
@@ -86,9 +94,6 @@ export default {
 
     // A path to a module which exports an async function that is triggered once after all test suites
     // globalTeardown: undefined,
-
-    // A set of global variables that need to be available in all test environments
-    // globals: {},
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",

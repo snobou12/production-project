@@ -16,10 +16,10 @@
     "test:ui:ok": "npx loki approve",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
-    "test:ui:report":"npm run test:ui:json && npm run test:ui:html && npm run test:ui:open",
-    "test:ui:json":"node scripts/generate-visual-json-report.js",
-    "test:ui:open":".loki\\report.html",
-    "test:ui:html":"npx reg-cli --from .loki/report.json --report .loki/report.html"
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html && npm run test:ui:open",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:open": ".loki\\report.html",
+    "test:ui:html": "npx reg-cli --from .loki/report.json --report .loki/report.html"
   },
   "license": "MIT",
   "devDependencies": {
@@ -88,11 +88,13 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.3.1",
+    "react-redux": "^8.1.0",
     "react-router-dom": "^6.11.2"
   },
   "loki": {
