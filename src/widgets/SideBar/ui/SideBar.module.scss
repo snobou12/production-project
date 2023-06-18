@@ -7,9 +7,6 @@
     transition: ease width 0.3s;
 }
 
-.collapsed {
-    width: var(--sidebar-width-collapsed);
-}
 
 .switchers {
     width: 100%;
@@ -21,5 +18,55 @@
 }
 
 .lang{
-    margin-left: 20px !important;
+    margin-left: 20px;
+}
+
+
+
+.items{
+    margin-top:20px;
+    margin-left: 30px;
+    display:flex;
+    flex-direction: column;
+}
+
+.item{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.icon{
+    fill: var(--inverted-primary-color);
+}
+
+.link{
+    margin-left:10px;
+    transition:ease 0.3s opacity;
+    opacity: 1;
+}
+
+
+.collapsedBtn{
+    position: absolute;
+    right: -32px;
+    bottom:32px;
+}
+
+
+.collapsed {
+    width: var(--sidebar-width-collapsed);
+
+    .switchers{
+        flex-direction: column;
+    }
+
+    .lang{
+        margin-left: 0;
+    }
+    
+    .link{
+        opacity: 0;
+        width: 0;
+    }
 }

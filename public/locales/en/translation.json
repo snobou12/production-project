@@ -2,5 +2,8 @@
   "current_language": "English",
   "PageNotFound": "Page Not Found",
   "An unexpected error occurred": "An unexpected error occurred",
-  "Reload page": "Reload page"
+  "Reload page": "Reload page",
+  "short_lang": "En",
+  "main_page_link": "Home",
+  "about_page_link": "About"
 }

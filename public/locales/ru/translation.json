@@ -2,5 +2,8 @@
   "current_language": "Русский",
   "PageNotFound": "Страница не найдена",
   "An unexpected error occurred": "Произошла непредвиденная ошибка",
-  "Reload page": "Перезагрузить страницу"
+  "Reload page": "Перезагрузить страницу",
+  "short_lang": "Ру",
+  "main_page_link": "Главная",
+  "about_page_link": "О нас"
 }

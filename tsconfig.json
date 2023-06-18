@@ -22,7 +22,11 @@
 		"baseUrl": ".",
 		"paths": {
 			"*": ["./src/*"]
-		}
+		},
+		"plugins": [
+			//для classes from module .class
+			{ "name": "typescript-plugin-css-modules" }
+		]
 	},
 
 	//чтобы можно было юзать import export
