@@ -17,7 +17,6 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserAuthData);
-    console.log('authData', authData);
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
@@ -44,7 +43,8 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
             <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
                 {t('Login')}
             </Button>
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+
         </div>
     );
 };
