@@ -6,7 +6,13 @@
   "short_lang": "En",
   "main_page_link": "Home",
   "about_page_link": "About",
-  "Login": "Sign In",
+  "Login": "Login",
   "increment_btn": "Increment",
-  "decrement_btn": "Decrement"
+  "decrement_btn": "Decrement",
+  "placeholder": "Type...",
+  "type_username": "Type username",
+  "type_password": "Type password",
+  "auth": "Authorization",
+  "Uncorrect Login Data": "Unccorect username or password",
+  "Logout": "Logout"
 }

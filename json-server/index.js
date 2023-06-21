@@ -29,7 +29,7 @@ server.post('/login', (req, res) => {
         );
 
         if (userFromBd) {
-            return res.json(userFromBd);
+            return res.json({ username: userFromBd.username, id: userFromBd.id });
         }
 
         return res.status(403).json({ message: 'User not found' });

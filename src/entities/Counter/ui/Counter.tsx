@@ -1,12 +1,13 @@
 import { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Button from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
+import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
 import { counterActions } from '../model/slice/CounterSlice';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
 const Counter: FC = () => {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { t } = useTranslation();
     const counterValue = useSelector(getCounterValue);
     const increment = () => {
