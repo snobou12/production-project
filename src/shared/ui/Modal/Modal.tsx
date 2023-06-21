@@ -3,6 +3,7 @@ import {
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 import classes from './Modal.module.scss';
 
 interface ModalProps {
@@ -14,6 +15,7 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 300;
 const Modal: FC<ModalProps> = (props) => {
+    const { theme } = useTheme();
     const {
         className, children, isOpen, onClose,
     } = props;
@@ -55,7 +57,7 @@ const Modal: FC<ModalProps> = (props) => {
     }, [isOpen, onKeyDown]);
     return (
         <Portal>
-            <div className={classNames(classes.Modal, mods, [className])}>
+            <div className={classNames(classes.Modal, mods, [className, theme, 'app_modal'])}>
                 <div className={classes.overlay} onClick={closeHandler}>
                     <div className={classes.content} onClick={onContentClick}>
                         {children}
