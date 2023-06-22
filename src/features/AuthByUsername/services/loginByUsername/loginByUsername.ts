@@ -9,6 +9,7 @@ interface LoginByUsernameProps {
     password: string;
 }
 
+// 3 dispatch, 1 - loginByUsername, 2 - thunkApi.dispatch, 3 - return response.data, если сработал catch, то 2 раза
 export const loginByUsername = createAsyncThunk<IUser, LoginByUsernameProps, { rejectValue: string }>(
     'login/loginByUsername',
     async (authData, thunkAPI) => {

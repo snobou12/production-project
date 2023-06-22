@@ -1,4 +1,4 @@
 Убрать ui внутри ui shared. (Loader,Modal)
 Добавить все storybooks(абсолютно все компоненты)
 Fix ui тесты в ci pipeline
-
+Добавить сами unit+rtl со всем чем можно
