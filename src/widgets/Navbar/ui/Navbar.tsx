@@ -1,4 +1,6 @@
-import { FC, useCallback, useState } from 'react';
+import {
+    FC, memo, useCallback, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
@@ -12,7 +14,8 @@ import classes from './Navbar.module.scss';
 interface NavbarProps {
 	className?: string;
 }
-const Navbar: FC<NavbarProps> = ({ className }) => {
+const Navbar: FC<NavbarProps> = memo((props:NavbarProps) => {
+    const { className } = props;
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState<boolean>(false);
     const dispatch = useAppDispatch();
@@ -47,6 +50,6 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
 
         </div>
     );
-};
+});
 
 export default Navbar;

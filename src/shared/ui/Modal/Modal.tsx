@@ -77,7 +77,6 @@ const Modal: FC<ModalProps> = (props) => {
                     <div className={classes.content} onClick={onContentClick}>
                         {children}
                     </div>
-
                 </div>
             </div>
         </Portal>

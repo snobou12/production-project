@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import classes from './Input.module.scss';
 
-// из-за конфликта типов onChange, Omit забирает из типа все пропсы, но исключить некоторые
+// из-за конфликта типов onChange, Omit забирает из типа все пропсы, исключает некоторые (value,onChange в данном случае)
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
 
 interface InputProps extends HTMLInputProps {

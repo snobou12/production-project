@@ -13,9 +13,18 @@
   "current_language": "current_language",
   "decrement_btn": "decrement_btn",
   "increment_btn": "increment_btn",
+  "main": {
+    "main_page_title": "main_page_title"
+  },
   "main_page_link": "main_page_link",
   "main_page_title": "main_page_title",
   "placeholder": "placeholder",
+  "profile": {
+    "profile_page_title": "profile_page_title"
+  },
+  "profile_page": "profile_page",
+  "profile_page_title": "profile_page_title",
+  "profileprofile_page_title": "profileprofile_page_title",
   "short_lang": "short_lang",
   "type_password": "type_password",
   "type_username": "type_username",
