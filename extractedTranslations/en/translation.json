@@ -1,6 +1,7 @@
 {
   "An unexpected error occurred": "An unexpected error occurred",
   "Decrement": "Decrement",
+  "Edit": "Edit",
   "Increment": "Increment",
   "Login": "Login",
   "Logout": "Logout",
@@ -12,7 +13,9 @@
   "auth": "auth",
   "current_language": "current_language",
   "decrement_btn": "decrement_btn",
+  "firstname_placeholder": "firstname_placeholder",
   "increment_btn": "increment_btn",
+  "lastname_placeholder": "lastname_placeholder",
   "main": {
     "main_page_title": "main_page_title"
   },
@@ -24,6 +27,7 @@
   },
   "profile_page": "profile_page",
   "profile_page_title": "profile_page_title",
+  "profile_page_titlee": "profile_page_titlee",
   "profileprofile_page_title": "profileprofile_page_title",
   "short_lang": "short_lang",
   "type_password": "type_password",

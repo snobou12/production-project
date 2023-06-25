@@ -1,4 +1,4 @@
-// code spliting redux
+// code splitting redux
 
 import {
     AnyAction, Reducer, ReducersMapObject, combineReducers,

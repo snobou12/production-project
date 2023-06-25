@@ -5,7 +5,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
     // Создаем экзмпеляры класса через new, чтобы был обьект
     // HTMLWebpackPlugin - создает HTML-файл для нашего приложения и автоматически внедряет в этот файл все созданные вами пакеты
     // new webpack.ProgressPlugin - показывает сколько процентов сборки произшло
@@ -26,6 +26,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
         }),
     ];
 

@@ -1,3 +1,6 @@
 {
-  "profile_page_title": "Страница пользователя"
+	"profile_page_title": "Страница Пользователя",
+	"edit": "Редактировать",
+	"firstname_placeholder": "Ваше имя",
+	"lastname_placeholder": "Ваша фамилия"
 }

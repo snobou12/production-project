@@ -23,3 +23,4 @@ declare module '*.svg' {
 
 // Чтобы можно было через definePlugin в webpack юзать переменные в приложении
 declare const __IS_DEV__: boolean;
+declare const __API__: string;

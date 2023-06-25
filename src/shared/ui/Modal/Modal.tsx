@@ -1,5 +1,5 @@
 import {
-    FC, MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
+    FC, MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal/Portal';
@@ -22,7 +22,7 @@ const Modal: FC<ModalProps> = (props) => {
     } = props;
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const [isMounted, setIsMounted] = useState<boolean>(false);
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -36,7 +36,7 @@ const Modal: FC<ModalProps> = (props) => {
     const onContentClick = (e:MouseEvent) => {
         e.stopPropagation();
     };
-    const mods:Record<string, boolean> = {
+    const mods:Record<string, boolean | undefined> = {
         [classes.opened]: isOpen,
         [classes.isClosing]: isClosing,
 

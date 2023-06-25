@@ -13,7 +13,7 @@ import { getLoginPassword } from 'features/AuthByUsername/model/selectors/getLog
 import { getLoginLoading } from 'features/AuthByUsername/model/selectors/getLoginLoading/getLoginLoading';
 import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError';
 import DynamicModuleLoader, { ReducersList } from 'shared/lib/components/DynamicModuleLoader.tsx/DynamicModuleLoader';
-import { loginByUsername } from '../../services/loginByUsername/loginByUsername';
+import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import classes from './LoginForm.module.scss';
 

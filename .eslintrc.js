@@ -77,5 +77,6 @@ module.exports = {
     // чтобы не ругался на обьявление isDev из env
     globals: {
         __IS_DEV__: true,
+        __API__: true,
     },
 };

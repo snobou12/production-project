@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { ThunkConfig } from 'app/providers/StoreProvider';
 import { IUser, userActions } from 'entities/User';
 import i18n from 'shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
@@ -9,24 +9,24 @@ interface LoginByUsernameProps {
     password: string;
 }
 
-// 3 dispatch, 1 - loginByUsername, 2 - thunkApi.dispatch, 3 - return response.data, если сработал catch, то 2 раза
-export const loginByUsername = createAsyncThunk<IUser, LoginByUsernameProps, { rejectValue: string }>(
+// происходит 3 dispatch, 1 - loginByUsername, 2 - thunkApi.dispatch, 3 - return response.data, если сработал catch, то 2 раза dispatch(для тестов строка)
+export const loginByUsername = createAsyncThunk<IUser, LoginByUsernameProps, ThunkConfig<string>>(
     'login/loginByUsername',
-    async (authData, thunkAPI) => {
+    async (authData, thunkApi) => {
+        const { extra, dispatch, rejectWithValue } = thunkApi;
         try {
-            const response = await axios.post<IUser>('http://localhost:8000/login', authData);
-
+            const response = await extra.api.post<IUser>('/login', authData);
             if (!response.data) {
                 throw new Error();
             }
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
-            thunkAPI.dispatch(userActions.setAuthData(response.data));
-
+            dispatch(userActions.setAuthData(response.data));
+            extra.navigate('/about');
             return response.data;
         } catch (e) {
             console.log(e);
             // лучше создать enum из вариантов ошибок, а уже в компоненте отрисовать нужный с переводом
-            return thunkAPI.rejectWithValue(i18n.t('Uncorrect Login Data'));
+            return rejectWithValue(i18n.t('Uncorrect Login Data'));
         }
     },
 );

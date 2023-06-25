@@ -18,6 +18,7 @@
 		"esModuleInterop": true,
 		// Если библиотека не имеет default export, то вместо import * as React from 'react' можно писать import React from "react"
 		"allowSyntheticDefaultImports": true,
+		// "strict": true,
 		//alias чтобы можно было использовать абсолютные пути(так же нужно в webpack написать пару строчек )
 		"baseUrl": ".",
 		"paths": {

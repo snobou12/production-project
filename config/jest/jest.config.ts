@@ -4,6 +4,7 @@ export default {
     // Чтобы jest знал про глобал переменные
     globals: {
         __IS_DEV__: true,
+        __API__: '',
     },
     clearMocks: true,
     testEnvironment: 'jsdom',

@@ -25,15 +25,15 @@ const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
 
     useEffect(() => {
         // Добавляем редюсер, вместе с маунтом компонента(асинхронная подгрузка для редюсеры(юзать можно для модалок и там где редюсеры не нужны, пока ui не отобразиться))
-        Object.entries(reducers).forEach(([name, reducer]:ReducersListEntry) => {
-            store.reducerManager.add(name, reducer);
+        Object.entries(reducers).forEach(([name, reducer]) => {
+            store.reducerManager.add(name as StateSchemaKey, reducer);
             dispatch({ type: `@INIT ${name} reducer` });
         });
 
         return () => {
             if (removeAfterUnmount) {
-                Object.entries(reducers).forEach(([name, _]:ReducersListEntry) => {
-                    store.reducerManager.remove(name);
+                Object.entries(reducers).forEach(([name, _]) => {
+                    store.reducerManager.remove(name as StateSchemaKey);
                     dispatch({ type: `@Destroy ${name} reducer` });
                 });
             }

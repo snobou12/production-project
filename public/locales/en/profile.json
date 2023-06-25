@@ -1,3 +1,6 @@
 {
-  "profile_page_title": "Profile Page"
+	"profile_page_title": "Profile Page",
+	"edit": "Edit",
+	"firstname_placeholder": "Your firstname",
+	"lastname_placeholder": "Your lastname"
 }
