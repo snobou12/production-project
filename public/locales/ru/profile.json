@@ -1,8 +1,16 @@
 {
-  "profile_page_title": "Страница Пользователя",
-  "edit": "Редактировать",
-  "firstname_placeholder": "Ваше имя",
-  "lastname_placeholder": "Ваша фамилия",
-  "profile_title_error": "Произошла ошибка при загрузке профиля",
-  "try_reload_page": "Попробуйте обновить страницу"
+	"profile_page_title": "Страница Пользователя",
+	"edit": "Редактировать",
+	"firstname_placeholder": "Ваше имя",
+	"lastname_placeholder": "Ваша фамилия",
+	"age_placeholder": "Ваш возраст",
+	"city_placeholder": "Ваш город",
+	"username_placeholder": "Ваш никнейм",
+	"avatar_placeholder": "Ваша ссылка на аватар",
+	"currency_placeholder": "Ваша валюта",
+	"country_placeholder": "Ваша страна",
+	"profile_title_error": "Произошла ошибка при загрузке профиля",
+	"try_reload_page": "Попробуйте обновить страницу",
+	"cancel": "Закрыть",
+	"save": "Сохранить"
 }

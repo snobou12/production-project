@@ -25,3 +25,19 @@
     flex-grow: 1;
     padding: 20px;
 }
+
+input {
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
+        appearance: none;
+    }
+
+    &[type="number"] {
+        appearance: textfield;
+
+        &:hover,
+        &:focus {
+            appearance: number-input;
+        }
+    }
+}

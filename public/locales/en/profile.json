@@ -1,8 +1,16 @@
 {
-  "profile_page_title": "Profile Page",
-  "edit": "Edit",
-  "firstname_placeholder": "Your firstname",
-  "lastname_placeholder": "Your lastname",
-  "profile_title_error": "An error occurred while loading the profileAn error occurred while loading the profile",
-  "try_reload_page": "Try refreshing the pageTry refreshing the page"
+	"profile_page_title": "Profile Page",
+	"edit": "Edit",
+	"firstname_placeholder": "Your firstname",
+	"lastname_placeholder": "Your lastname",
+	"age_placeholder": "Your age",
+	"city_placeholder": "Your city",
+	"username_placeholder": "Your placeholder",
+	"avatar_placeholder": "Your avatar link",
+	"currency_placeholder": "Your currency",
+	"country_placeholder": "Your country",
+	"profile_title_error": "An error occurred while loading the profileAn error occurred while loading the profile",
+	"try_reload_page": "Try refreshing the pageTry refreshing the page",
+	"cancel": "Cancel",
+	"save": "Save"
 }
