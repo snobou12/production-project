@@ -32,7 +32,7 @@ const Navbar: FC<NavbarProps> = memo((props:NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
-    if (authData?.id && authData.username) {
+    if (authData?.id && authData?.username) {
         return (
             <div className={classNames(classes.navbar, {}, [className])}>
                 <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
@@ -41,6 +41,7 @@ const Navbar: FC<NavbarProps> = memo((props:NavbarProps) => {
             </div>
         );
     }
+
     return (
         <div className={classNames(classes.navbar, {}, [className])}>
             <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
