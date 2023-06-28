@@ -1,6 +1,8 @@
 {
-	"profile_page_title": "Страница Пользователя",
-	"edit": "Редактировать",
-	"firstname_placeholder": "Ваше имя",
-	"lastname_placeholder": "Ваша фамилия"
+  "profile_page_title": "Страница Пользователя",
+  "edit": "Редактировать",
+  "firstname_placeholder": "Ваше имя",
+  "lastname_placeholder": "Ваша фамилия",
+  "profile_title_error": "Произошла ошибка при загрузке профиля",
+  "try_reload_page": "Попробуйте обновить страницу"
 }

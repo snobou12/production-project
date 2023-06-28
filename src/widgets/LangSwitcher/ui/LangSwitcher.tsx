@@ -18,7 +18,7 @@ const LangSwitcher: FC<LangSwitcherProps> = memo((props:LangSwitcherProps) => {
         <Button
             theme={ButtonTheme.CLEAR}
             onClick={toggle}
-            className={classNames(className, {}, [])}
+            className={classNames(className || '', {}, [])}
         >
             {short ? t('short_lang') : t('current_language')}
         </Button>

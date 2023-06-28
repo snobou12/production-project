@@ -27,10 +27,14 @@
   "profile_page": "profile_page",
   "profile_page_title": "profile_page_title",
   "profile_page_titlee": "profile_page_titlee",
+  "profile_title_error": "profile_title_error",
   "profileprofile_page_title": "profileprofile_page_title",
   "short_lang": "short_lang",
+  "try_reload_page": "try_reload_page",
   "type_password": "type_password",
   "type_username": "type_username",
   "Главная": "Главная",
-  "О нас": "О нас"
+  "О нас": "О нас",
+  "Попробуйте обновить страницу": "Попробуйте обновить страницу",
+  "Произошла ошибка при загрузке профиля": "Произошла ошибка при загрузке профиля"
 }

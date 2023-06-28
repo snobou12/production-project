@@ -11,11 +11,9 @@ export default ({ config }:{config:webpack.Configuration}) => {
         entry: {},
         src: path.resolve(__dirname, '..', '..', 'src'),
     };
-
-    config.resolve.modules.push(paths.src);
-
-    config.module.rules.push(buildCssLoader(true));
-    config.plugins.push(new DefinePlugin({
+    config!.resolve!.modules!.push(paths.src);
+    config!.module!.rules!.push(buildCssLoader(true));
+    config!.plugins!.push(new DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify(''),
     }));

@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { IUser, userActions } from 'entities/User';
-import i18n from 'shared/config/i18n/i18n';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
 interface LoginByUsernameProps {
@@ -21,12 +20,12 @@ export const loginByUsername = createAsyncThunk<IUser, LoginByUsernameProps, Thu
             }
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
-            extra.navigate('/about');
+            extra.navigate?.('/profile');
             return response.data;
         } catch (e) {
             console.log(e);
             // лучше создать enum из вариантов ошибок, а уже в компоненте отрисовать нужный с переводом
-            return rejectWithValue(i18n.t('Uncorrect Login Data'));
+            return rejectWithValue('error');
         }
     },
 );

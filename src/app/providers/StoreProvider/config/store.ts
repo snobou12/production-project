@@ -1,8 +1,10 @@
-import { ReducersMapObject, configureStore } from '@reduxjs/toolkit';
+import {
+    CombinedState, Reducer, ReducersMapObject, configureStore,
+} from '@reduxjs/toolkit';
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { useDispatch } from 'react-redux';
-import { $api } from 'shared/api/api';
+import $api from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
@@ -17,7 +19,7 @@ export function createReduxStore(initialState?:StateSchema, navigate?:(to:To, op
     const reducerManager = createReducerManager(rootReducer);
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         // axios

@@ -6,7 +6,7 @@ import { SidebarItemType } from '../model/items';
 import classes from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
-    item?:SidebarItemType;
+    item:SidebarItemType;
     collapsed:boolean;
 }
 // memo сравнивает пропсы, если пропсы не изменились, то перерисовка не произойдет при изменении чего либо в родители

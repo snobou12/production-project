@@ -27,7 +27,7 @@ const Input: FC<InputProps> = memo((props:InputProps) => {
         setCaretPostion(e.target.value.length);
     };
 
-    const ref = useRef<HTMLInputElement>();
+    const ref = useRef<HTMLInputElement>(null);
 
     const [isFocused, setIsFocused] = useState<boolean>(false);
 
@@ -48,7 +48,7 @@ const Input: FC<InputProps> = memo((props:InputProps) => {
     useEffect(() => {
         if (autoFocus) {
             setIsFocused(true);
-            ref?.current.focus();
+            if (ref.current) ref?.current.focus();
         }
     }, [autoFocus]);
     return (

@@ -73,6 +73,8 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         // Аргументы функции можно менять
         'no-param-reassign': 'off',
+        // можно использовать declare.ts перменные(global.d.ts in app/types)
+        'no-undef': 'off',
     },
     // чтобы не ругался на обьявление isDev из env
     globals: {
