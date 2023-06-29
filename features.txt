@@ -4,3 +4,4 @@ Fix ui тесты в ci pipeline
 Обернуть все что нужно в memo + useCallback,+useMemo
 precommit husky
 Баг с кнопкой выйти(когда жмешь не меняется ui)
+Лучше сделать фичу (EditableProfileCard) в которой вся логика, фича прокидывают эту логику и данные в ProfileCard

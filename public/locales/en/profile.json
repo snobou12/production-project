@@ -9,8 +9,19 @@
 	"avatar_placeholder": "Your avatar link",
 	"currency_placeholder": "Your currency",
 	"country_placeholder": "Your country",
-	"profile_title_error": "An error occurred while loading the profileAn error occurred while loading the profile",
-	"try_reload_page": "Try refreshing the pageTry refreshing the page",
+	"profile_title_error": "An error occurred while loading the profile",
+	"try_reload_page": "Try refreshing the page",
 	"cancel": "Cancel",
-	"save": "Save"
+	"save": "Save",
+	"INCORRECT_NO_DATA": "No data",
+	"INCORRECT_USER_AGE": "Incorrect age",
+	"INCORRECT_USER_AVATAR": "Incorrect avatar",
+	"INCORRECT_USER_CITY": "Incorrect city",
+	"INCORRECT_USER_COUNTRY": "Incorrect country",
+	"INCORRECT_USER_CURRENCY": "Incorrect currency",
+	"INCORRECT_USER_DATA": "Incorrect user data",
+	"INCORRECT_USER_FIRSTNAME": "Incorrect firstname",
+	"INCORRECT_USER_LASTNAME": "Incorrect lastname",
+	"INCORRECT_USER_USERNAME": "Incorrect username",
+	"SERVER_ERROR": "Server error"
 }

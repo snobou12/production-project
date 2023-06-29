@@ -12,5 +12,16 @@
 	"profile_title_error": "Произошла ошибка при загрузке профиля",
 	"try_reload_page": "Попробуйте обновить страницу",
 	"cancel": "Закрыть",
-	"save": "Сохранить"
+	"save": "Сохранить",
+	"INCORRECT_NO_DATA": "Некорректные данные",
+	"INCORRECT_USER_AGE": "Некорректный возраст",
+	"INCORRECT_USER_AVATAR": "Некорректная аватарка",
+	"INCORRECT_USER_CITY": "Некорректный город",
+	"INCORRECT_USER_COUNTRY": "Некорректная страна",
+	"INCORRECT_USER_CURRENCY": "Некорректная валюта",
+	"INCORRECT_USER_DATA": "Некорректные данные",
+	"INCORRECT_USER_FIRSTNAME": "Некорректное имя",
+	"INCORRECT_USER_LASTNAME": "Некорректная фамиля",
+	"INCORRECT_USER_USERNAME": "Некорректный username",
+	"SERVER_ERROR": "Ошибка со стороны сервера"
 }

@@ -3,13 +3,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import DynamicModuleLoader, { ReducersList } from 'shared/lib/components/DynamicModuleLoader.tsx/DynamicModuleLoader';
 import {
-    ProfileCard, fetchProfileData, getProfileError, getProfileForm, getProfileLoading, getProfileReadonly, profileActions, profileReducer,
+    ProfileCard, ValidateProfileError, fetchProfileData, getProfileError, getProfileForm, getProfileLoading, getProfileReadonly, getProfileValidateErrors, profileActions, profileReducer,
 } from 'entities/Profile';
 
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import Text, { TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 import classes from './ProfilePage.module.scss';
@@ -30,11 +31,12 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     const error = useSelector(getProfileError);
     const isLoading = useSelector(getProfileLoading);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
     const onChangeFirstName = useCallback((value:string) => {
-        dispatch(profileActions.updateProfileData({ first: value || ' ' }));
+        dispatch(profileActions.updateProfileData({ first: value || '' }));
     }, [dispatch]);
     const onChangeLastName = useCallback((value:string) => {
-        dispatch(profileActions.updateProfileData({ lastname: value || ' ' }));
+        dispatch(profileActions.updateProfileData({ lastname: value || '' }));
     }, [dispatch]);
 
     const onChangeAge = useCallback((value:string) => {
@@ -42,15 +44,15 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     }, [dispatch]);
 
     const onChangeCity = useCallback((value:string) => {
-        dispatch(profileActions.updateProfileData({ city: value || ' ' }));
+        dispatch(profileActions.updateProfileData({ city: value || '' }));
     }, [dispatch]);
 
     const onChangeUsername = useCallback((value:string) => {
-        dispatch(profileActions.updateProfileData({ username: value || ' ' }));
+        dispatch(profileActions.updateProfileData({ username: value || '' }));
     }, [dispatch]);
 
     const onChangeAvatar = useCallback((value:string) => {
-        dispatch(profileActions.updateProfileData({ avatar: value || ' ' }));
+        dispatch(profileActions.updateProfileData({ avatar: value || '' }));
     }, [dispatch]);
 
     const onChangeCurrency = useCallback((currency:Currency) => {
@@ -61,6 +63,20 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
         dispatch(profileActions.updateProfileData({ country: country || '' }));
     }, [dispatch]);
 
+    const validateErrorTranslates = {
+        [ValidateProfileError.INCORRECT_NO_DATA]: t('INCORRECT_NO_DATA'),
+        [ValidateProfileError.INCORRECT_USER_AGE]: t('INCORRECT_USER_AGE'),
+        [ValidateProfileError.INCORRECT_USER_AVATAR]: t('INCORRECT_USER_AVATAR'),
+        [ValidateProfileError.INCORRECT_USER_CITY]: t('INCORRECT_USER_CITY'),
+        [ValidateProfileError.INCORRECT_USER_COUNTRY]: t('INCORRECT_USER_COUNTRY'),
+        [ValidateProfileError.INCORRECT_USER_CURRENCY]: t('INCORRECT_USER_CURRENCY'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('INCORRECT_USER_DATA'),
+        [ValidateProfileError.INCORRECT_USER_FIRSTNAME]: t('INCORRECT_USER_FIRSTNAME'),
+        [ValidateProfileError.INCORRECT_USER_LASTNAME]: t('INCORRECT_USER_LASTNAME'),
+        [ValidateProfileError.INCORRECT_USER_USERNAME]: t('INCORRECT_USER_USERNAME'),
+        [ValidateProfileError.SERVER_ERROR]: t('SERVER_ERROR'),
+
+    };
     useEffect(() => {
         dispatch(fetchProfileData());
     }, [dispatch]);
@@ -68,6 +84,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader readonly={readonly} />
+                {validateErrors?.length && validateErrors.map((err) => <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} align={TextAlign.LEFT} />)}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

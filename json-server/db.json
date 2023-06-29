@@ -26,13 +26,13 @@
     }
   ],
   "profile": {
-    "first": "Юрий",
-    "lastname": "Девиан",
+    "first": "Yuriy",
+    "lastname": "Devian",
     "age": 23,
-    "currency": "USD",
+    "currency": "EUR",
     "country": "Ukraine",
     "city": "Moscow",
     "username": "admin",
-    "avatar": " https://techcrunch.com/wp-content/uploads/2022/12/lensa-ai-magic-avatar.jpg?w=1390&crop=1"
+    "avatar": " https://techcrunch.com/wp-content/uploads/2022/12/lensa-ai-magic-avatar.jpg"
   }
 }

@@ -1,8 +1,10 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildCssLoader } from './loaders/buildCssLoader';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options;
     // svg
     const svgLoader = {
         test: /\.svg$/i,
@@ -29,30 +31,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     // для использования других фич, babel - транспилятор для старых браузеров, из ecma2015 в <,
     // ~~~кстати если бы не юзали typescirpt, то он бы нужен был в любой случае + babel-react presets нужен был бы~~~
     // Кидать строго до typescriptLoader
-    const babelLoader = {
-        test: /\.(js|jsx|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    [
-                        // Экстрактор нужен, для того что бы не писать ключи руками. Он сам извлекает,
-                        //  а потом переводчик например проходится по этим ключам и делает переводы.
-                        // Тем самым разработчик вообще никак не взаимодействует с переводами и ключами
-                        // но сырая штука!!
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            // Не только вытаскивает ключи из кода, но и автоматически подставляет ключ,
+    const babelLoader = buildBabelLoader(options);
 
-                            keyAsDefaultValue: true,
-                        },
-                    ],
-                ],
-            },
-        },
-    };
     return [babelLoader, typescriptLoader, styleLoader, svgLoader, fileLoader];
 }

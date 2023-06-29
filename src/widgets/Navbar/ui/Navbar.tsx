@@ -32,23 +32,18 @@ const Navbar: FC<NavbarProps> = memo((props:NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
-    if (authData?.id && authData?.username) {
-        return (
-            <div className={classNames(classes.navbar, {}, [className])}>
+    return (
+        <div className={classNames(classes.navbar, {}, [className])}>
+            {isAuthModal && !authData?.id && !authData?.username && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+            {authData?.id && authData?.username ? (
                 <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
                     {t('Logout')}
                 </Button>
-            </div>
-        );
-    }
-
-    return (
-        <div className={classNames(classes.navbar, {}, [className])}>
-            <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
-                {t('Login')}
-            </Button>
-            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-
+            ) : (
+                <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
+                    {t('Login')}
+                </Button>
+            ) }
         </div>
     );
 });

@@ -24,7 +24,7 @@ const Select: FC<SelectProps> = memo((props:SelectProps) => {
         <option className={classes.option} key={opt.value} value={opt.value}>{opt.content}</option>
     )), [options]);
     const mods:Mods = {
-
+        [classes.readonly]: readonly,
     };
     return (
         <div className={classNames(classes.Wrapper, mods, [className])}>
