@@ -21,7 +21,7 @@
 	"INCORRECT_USER_CURRENCY": "Некорректная валюта",
 	"INCORRECT_USER_DATA": "Некорректные данные",
 	"INCORRECT_USER_FIRSTNAME": "Некорректное имя",
-	"INCORRECT_USER_LASTNAME": "Некорректная фамиля",
+	"INCORRECT_USER_LASTNAME": "Некорректная фамилия",
 	"INCORRECT_USER_USERNAME": "Некорректный username",
 	"SERVER_ERROR": "Ошибка со стороны сервера"
 }

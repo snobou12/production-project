@@ -9,6 +9,7 @@ interface LoginByUsernameProps {
 }
 
 // происходит 3 dispatch, 1 - loginByUsername, 2 - thunkApi.dispatch, 3 - return response.data, если сработал catch, то 2 раза dispatch(для тестов строка)
+// что получаем с сервера /что принимаем как аргумент в фанк/ thunk config
 export const loginByUsername = createAsyncThunk<IUser, LoginByUsernameProps, ThunkConfig<string>>(
     'login/loginByUsername',
     async (authData, thunkApi) => {

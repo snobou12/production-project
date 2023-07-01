@@ -1,0 +1,26 @@
+{
+	"Create Slice": {
+		"prefix": "crs",
+		"body": [
+			"import { PayloadAction, createSlice } from '@reduxjs/toolkit';",
+			"import { ${2:name}Schema } from '../types/${2:name}Schema';",
+			"",
+			"const initialState:${2:name}Schema = {",
+			"\tisLoading: false,",
+			"\terror: undefined,",
+			"\tdata: undefined,",
+			"};",
+			"",
+			"export const ${1:name}Slice = createSlice({",
+			"\tname: '${1:name}',",
+			"\tinitialState,",
+			"\treducers: {},",
+			"\textraReducers: (builder) => {},",
+			"});",
+			"",
+			"export const { actions: ${1:name}Actions } = ${1:name}Slice;",
+			"export const { reducer: ${1:name}Reducer } = ${1:name}Slice;"
+		],
+		"description": "Create Redux Slice"
+	}
+}
