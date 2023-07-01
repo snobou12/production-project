@@ -1,5 +1,5 @@
 import {
-    FC, memo, useCallback, useState,
+    FC, memo, useCallback, useEffect, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -34,8 +34,8 @@ const Navbar: FC<NavbarProps> = memo((props:NavbarProps) => {
 
     return (
         <div className={classNames(classes.navbar, {}, [className])}>
-            {isAuthModal && !authData?.id && !authData?.username && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
-            {authData?.id && authData?.username ? (
+            {isAuthModal && !authData && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
+            {authData ? (
                 <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
                     {t('Logout')}
                 </Button>

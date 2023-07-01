@@ -17,7 +17,7 @@ const SidebarItem: FC<SidebarItemProps> = memo((props:SidebarItemProps) => {
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
 
-    if ((item.authOnly && !authData?.id) || (item.authOnly && !authData?.username)) {
+    if (!authData && item.authOnly) {
         return null;
     }
     return (

@@ -75,6 +75,7 @@ module.exports = {
         'no-param-reassign': 'off',
         // можно использовать declare.ts перменные(global.d.ts in app/types)
         'no-undef': 'off',
+        'react/jsx-no-useless-fragment': 'off',
     },
     // чтобы не ругался на обьявление isDev из env
     globals: {

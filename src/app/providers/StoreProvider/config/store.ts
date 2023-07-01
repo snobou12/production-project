@@ -5,11 +5,10 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { useDispatch } from 'react-redux';
 import $api from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
-export function createReduxStore(initialState?:StateSchema, navigate?:(to:To, options?:NavigateOptions)=>void) {
+export function createReduxStore(initialState?:StateSchema) {
     const rootReducer: ReducersMapObject<StateSchema> = {
         counter: counterReducer,
         user: userReducer,
@@ -27,7 +26,6 @@ export function createReduxStore(initialState?:StateSchema, navigate?:(to:To, op
             thunk: {
                 extraArgument: {
                     api: $api,
-                    navigate,
                 },
             },
         }),

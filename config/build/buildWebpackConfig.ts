@@ -25,10 +25,12 @@ export function buildWebpackConfig(
         },
 
         // output куда и как будет называться, [contenthash] - добавляет id на основе кода внутри, clean - убирает все раннее созданные чанки
+        // publicPath для page/:id path
         output: {
             filename: '[name].[contenthash].js',
             path: paths.build,
             clean: true,
+            publicPath: '/',
         },
         // plugins - массив обьектов - плагинов:
         plugins: buildPlugins(options),

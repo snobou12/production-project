@@ -29,11 +29,9 @@ const SideBar: FC<SideBarProps> = memo((props:SideBarProps) => {
                 {collapsed ? '>' : '<'}
             </Button>
             <div className={classes.items}>
-
                 {SidebarItemsList.map((item) => (
                     <SidebarItem key={item.path} item={item} collapsed={collapsed} />
                 ))}
-
             </div>
             <div className={classes.switchers}>
                 <ThemeSwitcher />
