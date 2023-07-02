@@ -28,6 +28,8 @@
   "avatar_placeholder": "avatar_placeholder",
   "cancel": "cancel",
   "city_placeholder": "city_placeholder",
+  "comments": "comments",
+  "comments_are_empty": "comments_are_empty",
   "country_placeholder": "country_placeholder",
   "currency_placeholder": "currency_placeholder",
   "current_language": "current_language",

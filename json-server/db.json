@@ -78,13 +78,15 @@
 			"id": "1",
 			"username": "admin",
 			"password": "123",
-			"role": "ADMIN"
+			"role": "ADMIN",
+			"avatar": "https://techcrunch.com/wp-content/uploads/2022/12/lensa-ai-magic-avatar.jpg"
 		},
 		{
 			"id": "2",
 			"username": "user",
 			"password": "123",
-			"role": "USER"
+			"role": "USER",
+			"avatar": "https://shapka-youtube.ru/wp-content/uploads/2021/02/prikolnaya-avatarka-dlya-patsanov.jpg"
 		}
 	],
 	"profile": {
