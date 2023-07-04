@@ -1,3 +1,5 @@
 {
-	"comments_are_empty": "Комментарии не найдены"
+	"comments_are_empty": "Комментарии не найдены",
+	"new_comment_placeholder": "Введите текст комментария",
+	"new_comment_btn": "Отправить"
 }

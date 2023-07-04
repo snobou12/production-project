@@ -4,6 +4,7 @@ import { IComment } from 'entities/Comment/model/types/comment';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Text from 'shared/ui/Text/Text';
 import Skeleton from 'shared/ui/Skeleton/Skeleton';
+import AppLink from 'shared/ui/AppLink/AppLink';
 import classes from './CommentCard.module.scss';
 
 interface CommentCardProps {
@@ -39,7 +40,7 @@ const CommentCard: FC<CommentCardProps> = (props) => {
     }
     return (
         <div className={classNames(classes.CommentCard, {}, [className])}>
-            <div className={classes.header}>
+            <AppLink to={`/profile/${comment.user.id}`} className={classes.header}>
                 {comment.user.avatar && (
                     <Avatar
                         size={30}
@@ -50,7 +51,7 @@ const CommentCard: FC<CommentCardProps> = (props) => {
                     className={classes.username}
                     title={comment.user.username}
                 />
-            </div>
+            </AppLink>
             <Text
                 className={classes.text}
                 text={comment.text}

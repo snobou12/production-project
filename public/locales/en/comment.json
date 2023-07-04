@@ -1,3 +1,5 @@
 {
-	"comments_are_empty": "Comments not found"
+	"comments_are_empty": "Comments not found",
+	"new_comment_placeholder": "Type new comment...",
+	"new_comment_btn": "Add comment"
 }

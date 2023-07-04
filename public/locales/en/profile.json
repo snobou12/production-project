@@ -7,8 +7,6 @@
 	"city_placeholder": "Your city",
 	"username_placeholder": "Your placeholder",
 	"avatar_placeholder": "Your avatar link",
-	"currency_placeholder": "Your currency",
-	"country_placeholder": "Your country",
 	"profile_title_error": "An error occurred while loading the profile",
 	"try_reload_page": "Try refreshing the page",
 	"cancel": "Cancel",
@@ -23,5 +21,6 @@
 	"INCORRECT_USER_FIRSTNAME": "Incorrect firstname",
 	"INCORRECT_USER_LASTNAME": "Incorrect lastname",
 	"INCORRECT_USER_USERNAME": "Incorrect username",
-	"SERVER_ERROR": "Server error"
+	"SERVER_ERROR": "Server error",
+	"profile_not_found": "Failed to load profile"
 }

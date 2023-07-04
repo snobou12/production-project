@@ -19,8 +19,7 @@ const options = [
 
 ];
 const CurrencySelect: FC<CurrencySelectProps> = memo((props:CurrencySelectProps) => {
-    // пока что profile. Эту сущность можно будет юзать где угодно
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation('currency');
     const {
         className, value, onChange, readonly,
     } = props;

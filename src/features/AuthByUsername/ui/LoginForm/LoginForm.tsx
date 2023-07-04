@@ -47,7 +47,7 @@ const LoginForm: FC<LoginFormProps> = memo((props:LoginFormProps) => {
     }, [dispatch, password, username]);
 
     return (
-        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={initialReducers}>
             <div className={classNames(classes.LoginForm, {}, [className])}>
                 <Text title={t('auth')} />
                 {error && (

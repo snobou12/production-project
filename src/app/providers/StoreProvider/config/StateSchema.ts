@@ -6,6 +6,7 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
+import { AddCommentFormSchema } from 'features/AddNewComment';
 import { LoginSchema } from 'features/AuthByUsername';
 import { articleDetailCommentsSchema } from 'features/GetArticleDetailsCommentsByArticleId';
 
@@ -17,7 +18,8 @@ export interface StateSchema{
     loginForm?:LoginSchema;
     profile?:ProfileSchema;
     articleDetails?:ArticleDetailsSchema;
-    articleDetailsComments?:articleDetailCommentsSchema
+    articleDetailsComments?:articleDetailCommentsSchema;
+    addCommentForm?:AddCommentFormSchema
 }
 
 // для код сплиттинга редакс

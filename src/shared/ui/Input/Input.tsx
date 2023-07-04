@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import classes from './Input.module.scss';
 
 // из-за конфликта типов onChange, Omit забирает из типа все пропсы, исключает некоторые (value,onChange в данном случае)
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readonly'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
 
 interface InputProps extends HTMLInputProps {
     className?: string;
@@ -22,11 +22,11 @@ const Input: FC<InputProps> = memo((props:InputProps) => {
     const {
         className, value, onChange, autoFocus, readonly = false, placeholder = t('placeholder'), type = 'text', ...otherProps
     } = props;
-    const [caretPosition, setCaretPostion] = useState<number>(0);
+    const [caretPosition, setCaretPosition] = useState<number>(0);
 
     const onChangeHandler = (e:React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
-        setCaretPostion(e.target.value.length);
+        setCaretPosition(e.target.value.length);
     };
 
     const ref = useRef<HTMLInputElement>(null);
@@ -44,7 +44,7 @@ const Input: FC<InputProps> = memo((props:InputProps) => {
 
     // какая часть выделена(нет хорошего свойства => any)
     const onSelect = (e:SyntheticEvent<HTMLInputElement, Event>) => {
-        setCaretPostion(e.currentTarget.selectionStart || 0);
+        setCaretPosition(e.currentTarget.selectionStart || 0);
     };
 
     const isCaretVisible = isFocused && !readonly;

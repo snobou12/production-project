@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { IComment } from 'entities/Comment';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
 
 export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string | undefined, ThunkConfig<string>>(
     'articlesDetails/fetchCommentsByArticleId',
@@ -21,7 +20,6 @@ export const fetchCommentsByArticleId = createAsyncThunk<IComment[], string | un
             if (!response.data) {
                 throw new Error();
             }
-            localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             return response.data;
         } catch (e) {
             return rejectWithValue('error');

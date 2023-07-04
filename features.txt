@@ -3,7 +3,6 @@ Fix ui тесты в ci pipeline
 Добавить сами unit+rtl со всем чем можно
 Обернуть все что нужно в memo + useCallback,+useMemo
 precommit husky
-Лучше сделать фичу (EditableProfileCard) в которой вся логика, фича прокидывают эту логику и данные в ProfileCard
 
 
-переделать getArticleDetailsCommentsByArticleId feature для всех(getSomeTopicCommentById) и вынести слайс с адапатером в entities(Comment), в async thunk сделать логику как authbyUsername( т.е. добавить dispatch(...)) 
+сделать в фиче комменты для всего, не только для article

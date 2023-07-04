@@ -5,22 +5,19 @@ import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import CommentList from 'features/GetArticleDetailsCommentsByArticleId/ui/CommentList/CommentList';
-import DynamicModuleLoader, { ReducersList } from 'shared/lib/components/DynamicModuleLoader.tsx/DynamicModuleLoader';
 import {
-    articleDetailsCommentsReducer, getArticleComments, getArticleCommentsError, getArticleCommentsIsLoading,
+    getArticleComments, getArticleCommentsError, getArticleCommentsIsLoading,
 } from 'features/GetArticleDetailsCommentsByArticleId';
 import { useSelector } from 'react-redux';
 import { fetchCommentsByArticleId } from 'features/GetArticleDetailsCommentsByArticleId/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useAppDispatch } from 'app/providers/StoreProvider/config/store';
+import { AddCommentForm } from 'features/AddNewComment';
 import classes from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
     className?: string;
 }
 
-const reducers:ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
-};
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { t } = useTranslation('article-details');
     const dispatch = useAppDispatch();
@@ -40,15 +37,14 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             </div>
         );
     }
-
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames('', {}, [className])}>
-                <ArticleDetails articleId={id} />
-                <Text className={classes.commentTitle} title={t('comments')} />
-                <CommentList isLoading={isLoading} comments={comments} />
-            </div>
-        </DynamicModuleLoader>
+        <div className={classNames('', {}, [className])}>
+            <ArticleDetails articleId={id} />
+            <Text className={classes.commentTitle} title={t('comments')} />
+            <AddCommentForm />
+            <CommentList isLoading={isLoading} comments={comments} />
+
+        </div>
     );
 };
 

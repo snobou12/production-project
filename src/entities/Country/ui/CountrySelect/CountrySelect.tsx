@@ -21,8 +21,7 @@ const options = [
 
 ];
 const CountrySelect: FC<CountrySelectProps> = memo((props:CountrySelectProps) => {
-    // пока что profile. Эту сущность можно будет юзать где угодно
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation('country');
     const {
         className, value, onChange, readonly,
     } = props;

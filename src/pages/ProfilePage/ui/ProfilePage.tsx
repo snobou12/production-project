@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import Text, { TextAlign, TextTheme } from 'shared/ui/Text/Text';
+import { useParams } from 'react-router-dom';
+import { getUserAuthData } from 'entities/User';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 import classes from './ProfilePage.module.scss';
@@ -30,6 +32,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     const formData = useSelector(getProfileForm);
     const error = useSelector(getProfileError);
     const isLoading = useSelector(getProfileLoading);
+    const authData = useSelector(getUserAuthData);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
     const onChangeFirstName = useCallback((value:string) => {
@@ -63,6 +66,8 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
         dispatch(profileActions.updateProfileData({ country: country || '' }));
     }, [dispatch]);
 
+    const { id } = useParams<{id:string}>();
+    const canEdit = id === authData?.id;
     const validateErrorTranslates = {
         [ValidateProfileError.INCORRECT_NO_DATA]: t('INCORRECT_NO_DATA'),
         [ValidateProfileError.INCORRECT_USER_AGE]: t('INCORRECT_USER_AGE'),
@@ -78,12 +83,21 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
 
     };
     useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
-    return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        dispatch(fetchProfileData(id));
+    }, [dispatch, id]);
+
+    if (!id) {
+        return (
             <div className={classNames('', {}, [className])}>
-                <ProfilePageHeader readonly={readonly} />
+                <Text theme={TextTheme.ERROR} title={t('profile_not_found')} />
+            </div>
+        );
+    }
+
+    return (
+        <DynamicModuleLoader reducers={reducers}>
+            <div className={classNames('', {}, [className])}>
+                <ProfilePageHeader readonly={readonly} canEdit={canEdit} />
                 {validateErrors?.length && validateErrors.map((err) => <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} align={TextAlign.LEFT} />)}
                 <ProfileCard
                     data={formData}

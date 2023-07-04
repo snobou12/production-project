@@ -70,15 +70,62 @@ const ProfileCard: FC<ProfileCardProps> = (props) => {
                     </div>
                 )}
 
-                <Input onChange={onChangeFirstName} readonly={readonly} value={data?.first} placeholder={t('firstname_placeholder')} className={classes.input} />
-                <Input onChange={onChangeLastName} readonly={readonly} value={data?.lastname} placeholder={t('lastname_placeholder')} className={classes.input} />
-                <Input type="number" onChange={onChangeAge} readonly={readonly} value={data?.age} placeholder={t('age_placeholder')} className={classes.input} />
-                <Input onChange={onChangeCity} readonly={readonly} value={data?.city} placeholder={t('city_placeholder')} className={classes.input} />
-                <Input onChange={onChangeUsername} readonly={readonly} value={data?.username} placeholder={t('username_placeholder')} className={classes.input} />
-                <Input onChange={onChangeAvatar} readonly={readonly} value={data?.avatar} placeholder={t('avatar_placeholder')} className={classes.input} />
+                <Input
+                    onChange={onChangeFirstName}
+                    readonly={readonly}
+                    value={data?.first}
+                    placeholder={t('firstname_placeholder')}
+                    className={classes.input}
+                />
+                <Input
+                    onChange={onChangeLastName}
+                    readonly={readonly}
+                    value={data?.lastname}
+                    placeholder={t('lastname_placeholder')}
+                    className={classes.input}
+                />
+                <Input
+                    type="number"
+                    onChange={onChangeAge}
+                    readonly={readonly}
+                    value={data?.age}
+                    placeholder={t('age_placeholder')}
+                    className={classes.input}
+                />
+                <Input
+                    onChange={onChangeCity}
+                    readonly={readonly}
+                    value={data?.city}
+                    placeholder={t('city_placeholder')}
+                    className={classes.input}
+                />
+                <Input
+                    onChange={onChangeUsername}
+                    readonly={readonly}
+                    value={data?.username}
+                    placeholder={t('username_placeholder')}
+                    className={classes.input}
+                />
+                <Input
+                    onChange={onChangeAvatar}
+                    readonly={readonly}
+                    value={data?.avatar}
+                    placeholder={t('avatar_placeholder')}
+                    className={classes.input}
+                />
 
-                <CurrencySelect className={classes.input} value={data?.currency} onChange={onChangeCurrency} readonly={readonly} />
-                <CountrySelect className={classes.input} value={data?.country} onChange={onChangeCountry} readonly={readonly} />
+                <CurrencySelect
+                    className={classes.input}
+                    value={data?.currency}
+                    onChange={onChangeCurrency}
+                    readonly={readonly}
+                />
+                <CountrySelect
+                    className={classes.input}
+                    value={data?.country}
+                    onChange={onChangeCountry}
+                    readonly={readonly}
+                />
 
             </div>
         </div>

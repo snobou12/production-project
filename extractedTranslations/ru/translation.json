@@ -43,10 +43,13 @@
   },
   "main_page_link": "main_page_link",
   "main_page_title": "main_page_title",
+  "new_comment_btn": "new_comment_btn",
+  "new_comment_placeholder": "new_comment_placeholder",
   "placeholder": "placeholder",
   "profile": {
     "profile_page_title": "profile_page_title"
   },
+  "profile_not_found": "profile_not_found",
   "profile_page": "profile_page",
   "profile_page_title": "profile_page_title",
   "profile_page_titlee": "profile_page_titlee",
